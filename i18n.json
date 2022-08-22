@@ -1,0 +1,11 @@
+{
+    "locales": ["ua", "en", "ru"],
+    "defaultLocale": "ua",
+    "localeDetection": false,
+    "pages": {
+        "*": ["common"],
+        "/": ["firstblock", "infoblock", "cataloglist", "filtersitem", "aboutblock", "basket", "card"],
+        "/menu": ["menutitle", "returnbutton"],
+        "/thanks": ["thanksblock", "returnbutton"]
+    }
+}

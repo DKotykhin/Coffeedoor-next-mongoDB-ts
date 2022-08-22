@@ -1,0 +1,49 @@
+@import '../../helpers/variables.scss';
+.item_list {
+    .item_list_close {
+        margin-bottom: 8px;
+        cursor: pointer;
+    }
+    .item_list_price {
+        margin-top: 16px;
+        font-size: 20px;
+    }
+    .item_list_quantity {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-size: 20px;
+    }
+    .item_list_remove,
+    .item_list_add {
+        color: $firm_mint;
+        font-size: 30px;
+        vertical-align: middle;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .item_list_add {
+        margin-left: 10px;
+    }
+    .item_list_button {
+        @include button;
+        padding: 8px;
+        width: 150px;
+        margin-left: 20px;
+        color: white;
+        border: 1px solid $firm_mint;
+        background-color: $firm_mint;
+        &:hover {
+            color: black;
+            background-color: #fff;
+        }
+    }
+    // .swiper-pagination-bullet-active {
+    //     background-color: $firm_mint;
+    // }
+    // .swiper {
+    //     text-align: center;
+    // }
+    .list div span {
+        font-size: 14px;
+    }
+}

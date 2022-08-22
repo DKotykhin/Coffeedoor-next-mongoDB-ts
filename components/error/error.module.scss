@@ -1,0 +1,22 @@
+.error {
+    .error_image {
+        display: flex;
+        margin: 50px 0;
+        justify-content: center;
+    }
+    .error_title {
+        text-align: center;
+        font-size: 24px;
+        color: #00a1b6;
+    }
+    .error_link {
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        color: #00a1b6;
+    }
+}

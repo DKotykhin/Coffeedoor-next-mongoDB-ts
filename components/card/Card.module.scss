@@ -1,0 +1,62 @@
+@import '../../helpers/variables.scss';
+.catalog_item {
+    margin: 15px;
+    &_name {
+        font-size: 24px;
+        font-weight: 700;
+        padding-top: 8px;
+        padding-bottom: 16px;
+        min-height: 95px;
+        @media (max-width: 600px) {
+            font-size: 18px;
+        }
+    }
+    &_price {
+        font-size: 25px;
+        margin-bottom: 10px;
+        @media (max-width: 600px) {
+            font-size: 20px;
+        }
+    }
+    &_desc {
+        min-height: 80px;
+        @media (max-width: 600px) {
+            min-height: 100px;
+        }
+        p {
+            font-size: 14px;
+            @media (max-width: 600px) {
+                font-size: 13px;
+            }
+        }
+    }
+    &_buttons .more_button,
+    &_buttons .basket_button {
+        @include button;
+        padding: 10px;
+        margin: 10px auto;
+        width: 140px;
+        @media (max-width: 600px) {
+            font-size: 12px;
+            max-width: 100px;
+            padding: 6px;
+        }
+    }
+    &_buttons .basket_button {
+        color: white;
+        border: 1px solid $firm_mint;
+        background-color: $firm_mint;
+        &:hover {
+            color: black;
+            background-color: #fff;
+        }
+    }
+    &_buttons .more_button {
+        color: black;
+        border: 1px solid black;
+        &:hover {
+            background-color: $dark_grey;
+            color: white;
+        }
+    }
+}

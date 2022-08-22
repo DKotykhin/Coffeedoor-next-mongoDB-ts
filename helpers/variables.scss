@@ -1,0 +1,10 @@
+$firm_mint: #00a1b6;
+$firm_brown: #683b39;
+$dark_grey: rgb(51, 51, 51);
+@mixin button {
+    margin: 0 auto;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: 0.5s all;
+    cursor: pointer;
+}

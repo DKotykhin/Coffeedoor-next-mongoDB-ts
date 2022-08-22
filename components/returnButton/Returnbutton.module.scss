@@ -1,0 +1,24 @@
+@import '../../helpers/variables.scss';
+.return {
+    .return_link {
+        @include button;
+        display: block;
+        padding: 10px;
+        max-width: 180px;
+        margin-bottom: 50px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        border: 1px solid $firm_mint;
+        background-color: $firm_mint;
+        &:hover {
+            color: black;
+            background-color: #fff;
+        }
+        @media (max-width: 768px) {
+            font-size: 14px;
+            max-width: 140px;
+        }
+    }
+}
