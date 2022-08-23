@@ -7,9 +7,9 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import DetailSwipeImage from "./DetailSwipeImage";
 import DetailActive from "./DetailActive";
+import { IBody, ICard } from "../../types/cardType";
 
 import styles from "./CardDetail.module.scss";
-import { IBody, ICard } from "../../types/cardType";
 
 const style = {
     position: "absolute",

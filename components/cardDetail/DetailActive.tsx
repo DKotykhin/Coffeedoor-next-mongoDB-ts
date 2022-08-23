@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
+
 import { useAppDispatch } from "../../store/hook";
 import useTranslation from "next-translate/useTranslation";
 
@@ -9,21 +9,20 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 import { basketAddItems } from "../../store/basketSlice";
-
-import styles from "./CardDetail.module.scss";
 import { IBody, ICard } from "../../types/cardType";
 import { IBasket } from "../../types/basketType";
 
+import styles from "./CardDetail.module.scss";
 interface IDetailActive {
     props: ICard;
     body: IBody;
     closeModal: () => void;
 }
 
-const DetailActive: React.FC<IDetailActive> = ({ props, body, closeModal }) => {    
+const DetailActive: React.FC<IDetailActive> = ({ props, body, closeModal }) => {
     const { _id, price, weight } = props;
     const { title, name } = body;
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState<number>(1);
     const dispatch = useAppDispatch();
     let { t } = useTranslation("card");
 

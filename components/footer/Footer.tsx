@@ -10,19 +10,25 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 
 import styles from "./Footer.module.scss";
 
+enum SocialMedia {
+    FACEBOOK = "https://www.facebook.com/Coffeedoor.Kharkov",
+    INSTAGRAM = "https://www.instagram.com/coffeedoor.kh/",
+    TELEGRAM = "https://t.me/Dmytro_Kotykhin"
+}
+
 const Footer: React.FC = () => {
     let { t } = useTranslation("common");
 
     return (
         <div id="footer_block" className={styles.footer_block}>
             <Box>
-                <Link href="https://www.facebook.com/Coffeedoor.Kharkov">
+                <Link href={SocialMedia.FACEBOOK}>
                     <FacebookIcon className={styles.footer_icon} />
                 </Link>
-                <Link href="https://www.instagram.com/coffeedoor.kh/">
+                <Link href={SocialMedia.INSTAGRAM}>
                     <InstagramIcon className={styles.footer_icon} />
                 </Link>
-                <Link href="https://t.me/Dmytro_Kotykhin">
+                <Link href={SocialMedia.TELEGRAM}>
                     <TelegramIcon className={styles.footer_icon} />
                 </Link>
             </Box>

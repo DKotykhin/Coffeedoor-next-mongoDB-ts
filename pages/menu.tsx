@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from 'next';
-import type { NextPage } from 'next';
 
 import { connectToDatabase } from "../lib/mongodb";
 
@@ -16,7 +15,7 @@ interface MenuPage {
 
 const MenuPage: React.FC<MenuPage> = ({ menulist }) => {
     const router = useRouter();
-    let lang;
+    let lang: number;
     switch (router.locale) {
         case "ua":
             lang = 0;
@@ -32,7 +31,7 @@ const MenuPage: React.FC<MenuPage> = ({ menulist }) => {
     }
 
     return (
-        <div>
+        <>
             <Head>
                 <meta name="description" content="Меню кав'ярні" />
                 <title>{"Меню кав'ярні"}</title>
@@ -40,7 +39,7 @@ const MenuPage: React.FC<MenuPage> = ({ menulist }) => {
             <MenuTitle />
             <Accordeon menulist={menulist} lang={lang} />
             <ReturnButton />
-        </div>
+        </>
     );
 }
 
