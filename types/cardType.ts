@@ -1,9 +1,11 @@
-export interface ICard {
+export interface ICard extends INewCardData {
     _id: string;    
+}
+export interface INewCardData {      
     body: IBody[];
     card_img: string;
     list_img: string[];
-    weight: number;
+    weight?: number;
     price: number;
     order: boolean;
     hide: boolean;
