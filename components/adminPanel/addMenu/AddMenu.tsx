@@ -14,7 +14,7 @@ import MenuItemNew from "../updateMenu/MenuItemNew";
 import { MenuData } from "../formData/MenuData";
 import { addData } from "../AdminApi";
 import { IMenu } from "../../../types/menuType";
-import { addCollectionItem } from "../../../store/adminSlice";
+import { addMenuItem } from "../../../store/adminSlice";
 
 interface IFormData {
     [key: string]: string
@@ -39,7 +39,7 @@ const AddMenu: React.FC<IAddMenu> = ({ cardData, collection }) => {
                 if (data.insertedId) {
                     router.push("/admin");
                     const newItem = { _id: data.insertedId, ...newData };
-                    dispatch(addCollectionItem({newItem, collection}));
+                    dispatch(addMenuItem(newItem));
                     toast.success("Successfully add data to database");
                 } else toast.error("Can't get new id from database");
             })

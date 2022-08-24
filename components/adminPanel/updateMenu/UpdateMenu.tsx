@@ -14,8 +14,8 @@ import MenuItemNew from "./MenuItemNew";
 import { MenuData } from "../formData/MenuData";
 import { updateData, deleteData } from "../AdminApi";
 import {
-    updateCollectionItem,
-    deleteCollectionItem,
+    updateMenuItem,
+    deleteMenuItem,
 } from "../../../store/adminSlice";
 import { IMenu } from "../../../types/menuType";
 
@@ -41,7 +41,7 @@ const UpdateMenu: React.FC<IUpdateMenu> = ({ cardData, id, collection }) => {
         updateData(newData, id, collection)
             .then((data) => {
                 if (data.matchedCount) {
-                    dispatch(updateCollectionItem({ data: newData, id, collection }));
+                    dispatch(updateMenuItem({ data: newData, id }));
                     router.push("/admin");
                     toast.success("Successfully update data in database");
                 } else toast.error("Can't update position in database");
@@ -57,7 +57,7 @@ const UpdateMenu: React.FC<IUpdateMenu> = ({ cardData, id, collection }) => {
         deleteData(id, collection)
             .then((data) => {
                 if (data.deletedCount) {
-                    dispatch(deleteCollectionItem({id, collection}));
+                    dispatch(deleteMenuItem(id));
                     router.push("/admin");
                     toast.success("Successfully deleted data from database");
                 } else toast.error("Can't deleted data from database");

@@ -21,13 +21,13 @@ const AdminButtons: React.FC = () => {
     const ListClick = (collection: string) => {
         setLoading(true);
         getData(collection)
-            .then((data) => {                
+            .then((data) => {
                 if (collection === "menu_multilang") {
                     dispatch(getCollectionItems({ collection, carddata: [], menudata: data }));
                 } else {
                     dispatch(getCollectionItems({ collection, carddata: data, menudata: [] }));
                 }
-                setLoading(false);                
+                setLoading(false);
             })
             .catch(function (error) {
                 console.warn(error.message);
@@ -99,24 +99,12 @@ const AdminButtons: React.FC = () => {
                                 : " елемента"}
                         </Typography>
                     )}
-                    {/* {collectiondata.menudata?.length > 0 && (
-                        <Typography
-                            variant="h6"
-                            sx={{ textAlign: "center", mt: 2 }}
-                        >
-                            {"Знайдено "}
-                            {collectiondata.menudata.length}
-                            {collectiondata.menudata.length > 4
-                                ? " елементів"
-                                : " елемента"}
-                        </Typography>
-                    )} */}
-                    {collectiondata.collection !== "menu_multilang"
-                        ? collectiondata.carddata?.map((item) => (
-                            <AdminCard props={item} key={item._id} />
-                        ))
-                        : collectiondata.menudata?.map((item) => (
+                    {collectiondata.collection === "menu_multilang"
+                        ? collectiondata.menudata?.map((item) => (
                             <AdminMenu props={item} key={item._id} />
+                        ))
+                        : collectiondata.carddata?.map((item) => (
+                            <AdminCard props={item} key={item._id} />
                         ))}
                 </>
             )}

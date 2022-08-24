@@ -174,7 +174,7 @@ export const MenuData = (data: IFormData) => {
             price: data.price299,
         },
     ];
-    const newData = {
+    const newFormData = {
         title: [
             { title: data.title_ua },
             { title: data.title_ru },
@@ -185,9 +185,10 @@ export const MenuData = (data: IFormData) => {
             body_ru.filter(Boolean),
             body_en.filter(Boolean),
         ],
-        position: +data.position,
         hide: data.hide === "true",
+        ...(data.position && { position: +data.position }),
+       
     };
     // console.log(newData)
-    return newData;
+    return newFormData;
 };

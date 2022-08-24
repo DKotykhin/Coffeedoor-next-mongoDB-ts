@@ -3,7 +3,7 @@ export interface IMenu {
     title: ITitle[];
     body: IBody[];
     hide: boolean;
-    position?: number;
+    position: number;
 }
 
 export interface ITitle {

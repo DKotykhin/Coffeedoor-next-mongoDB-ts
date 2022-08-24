@@ -12,8 +12,8 @@ import RadioButtonItem from "../inputs/RadioButtonItem";
 import UpdateCardLang from "../updateCard/UpdateCardLang";
 import { CardData } from "../formData/CardData";
 import { addData } from "../AdminApi";
-import { addCollectionItem } from "../../../store/adminSlice";
-import { ICard } from "../../../types/cardType";
+import { addCardItem } from "../../../store/adminSlice";
+import { ICard, INewCardData } from "../../../types/cardType";
 
 interface IFormData {
     [key: string]: string
@@ -34,13 +34,13 @@ const AddCard: React.FC<IAddCard> = ({ cardData, collection }) => {
     const item_en = cardData?.body[2];
 
     const onSubmit = (data: IFormData) => {
-        const newData = CardData(data);
+        const newData: INewCardData = CardData(data);
         addData(newData, collection)
             .then((data) => {
                 if (data.insertedId) {
                     router.push("/admin");
                     const newItem = { _id: data.insertedId, ...newData };
-                    dispatch(addCollectionItem({newItem, collection}));
+                    dispatch(addCardItem(newItem));
                     toast.success("Successfully add data to database");
                 } else toast.error("Can't get new id from database");
             })

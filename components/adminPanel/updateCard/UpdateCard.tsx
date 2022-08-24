@@ -12,8 +12,8 @@ import UpdateCardLang from "./UpdateCardLang";
 import { CardData } from "../formData/CardData";
 import { updateData, deleteData } from "../AdminApi";
 import {
-    updateCollectionItem,
-    deleteCollectionItem,
+    updateCardItem,
+    deleteCardItem,
 } from "../../../store/adminSlice";
 import { ICard, INewCardData } from "../../../types/cardType";
 
@@ -42,7 +42,7 @@ const UpdateCard: React.FC<IUpdateCard> = ({ cardData, id, collection }) => {
         updateData(newData, id, collection)
             .then((data) => {
                 if (data.matchedCount) {
-                    dispatch(updateCollectionItem({ data: newData, id, collection }));
+                    dispatch(updateCardItem({ data: newData, id }));
                     router.push("/admin");
                     toast.success("Successfully update data in database");
                 } else toast.error("Can't update position in database");
@@ -54,11 +54,11 @@ const UpdateCard: React.FC<IUpdateCard> = ({ cardData, id, collection }) => {
     };
 
     const onDelete = () => {
-        console.log("Видалити: ", id, collection);
+        // console.log("Видалити: ", id, collection);
         deleteData(id, collection)
             .then((data) => {
                 if (data.deletedCount) {
-                    dispatch(deleteCollectionItem({id, collection}));
+                    dispatch(deleteCardItem(id));
                     router.push("/admin");
                     toast.success("Successfully deleted data from database");
                 } else toast.error("Can't deleted data from database");
