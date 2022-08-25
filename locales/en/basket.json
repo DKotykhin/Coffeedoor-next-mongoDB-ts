@@ -2,6 +2,7 @@
     "title": "Your order:",
     "message": "Basket is empty",
     "total": "Total: ",
+    "weight": "g",
     "currency": " uah",
     "name": "Your name",
     "phone": "Your phone",

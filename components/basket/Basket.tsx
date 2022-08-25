@@ -42,9 +42,9 @@ const Basket: React.FC = () => {
     const router = useRouter();
     let { t } = useTranslation("basket");
 
-    const {basketdata} = useAppSelector(selectBasket);
+    const { basketdata } = useAppSelector(selectBasket);
     const dispatch = useAppDispatch();
-    
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -58,15 +58,15 @@ const Basket: React.FC = () => {
         dispatch(basketAddQuantity(basketItem));
     };
 
-    const onSubmitForm = (formdata: IFormData) => {        
+    const onSubmitForm = (formdata: IFormData) => {
         const telegramData: ITelegramData = {
             formdata,
             basketdata
         }
-        console.log(telegramData);        
+        console.log(telegramData);
         dispatch(sendDataToTelegram(telegramData));
         setOpen(false);
-        if (basketdata.length) {            
+        if (basketdata.length) {
             router.push("/thanks");
         }
     };
@@ -102,7 +102,10 @@ const Basket: React.FC = () => {
                                         <Typography
                                             className={styles.modal_name}
                                         >
-                                            {item.title} {item.name}
+                                            {item.title}
+                                            {" "}
+                                            {item.name}
+                                            {item.weight ? `, ${item.weight}${t("weight")}` : ""}
                                         </Typography>
                                         <CloseIcon
                                             className={styles.modal_icon}

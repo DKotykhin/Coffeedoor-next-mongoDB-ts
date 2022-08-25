@@ -27,7 +27,9 @@ export default async function handler(
         message += `<b>Замовлення: </b>\n`;
 
         req.body.basketdata.forEach((item: IBasket) => {
-            message += `${item.title} ${item.name} ${item.quantity} x ${item.price} грн\n`;
+            message += `${item.title} ${item.name}, ${
+                item.weight ? `${item.weight}г,` : ""
+            } ${item.quantity} x ${item.price} грн\n`;
             itemSum += +item.price * item.quantity;
         });
         message += `<b>Всього на сумму: </b>${itemSum} грн`;
