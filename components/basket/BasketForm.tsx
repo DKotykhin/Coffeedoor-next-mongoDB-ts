@@ -18,7 +18,7 @@ import classNames from "classnames";
 import { FormValidation } from "./BasketFormValidation";
 
 import styles from "./Basketform.module.scss";
-import { IFormData } from "../../types/formType";
+import { IFormData } from "../../types/basketType";
 
 const theme = createTheme({
     palette: {
