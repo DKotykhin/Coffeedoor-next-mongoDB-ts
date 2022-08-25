@@ -3,7 +3,7 @@ export interface IBasket {
     name: string;
     price: number;
     quantity: number;
-    weight: number;
+    weight?: number;
     _id: string;
 }
 

@@ -1,5 +1,3 @@
-// import { useDispatch } from "react-redux";
-import { useAppDispatch } from "../../store/hook";
 import { useState } from "react";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
@@ -7,11 +5,12 @@ import useTranslation from "next-translate/useTranslation";
 import { Typography, Button, Box } from "@mui/material";
 import { Card, CardActions, CardContent } from "@mui/material";
 
+import { useAppDispatch } from "../../store/hook";
 import { basketAddItems } from "../../store/basketSlice";
 import CardDetail from "../cardDetail/CardDetail";
+import { ICard } from "../../types/cardType";
 
 import styles from "./Card.module.scss";
-import { ICard } from "../../types/cardType";
 
 interface ICatalogCard {
     props: ICard;
@@ -97,7 +96,7 @@ const CatalogCard: React.FC<ICatalogCard> = ({ props, i }) => {
                     </Button>
                     <Button
                         className={styles.basket_button}
-                        onClick={() => 
+                        onClick={() =>
                             dispatch(
                                 basketAddItems({
                                     _id,
