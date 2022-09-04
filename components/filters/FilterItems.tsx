@@ -16,7 +16,7 @@ const theme = createTheme({
 interface IFilterItems {
     onSelect: (arg0: string) => void;
     quantity: number | null;
-    filterArray: IFilter[] | null;
+    filterArray?: IFilter[];
 }
 
 interface IFilter {

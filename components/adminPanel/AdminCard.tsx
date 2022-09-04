@@ -17,13 +17,13 @@ const AdminCard: React.FC<IAdminCard> = ({ props }) => {
     const dispatch = useAppDispatch();
 
     const editorClick = () => {
-        router.push(`/admin/${props._id}`);
+        router.push(`/adminpanel/${props._id}`);
     };
 
     const cloneClick = () => {
         // console.log("clone: ", props._id);
         dispatch(cloneId(props._id));
-        router.push("/admin/add");
+        router.push("/adminpanel/add");
     };
 
     return (

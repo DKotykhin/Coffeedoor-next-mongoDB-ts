@@ -1,12 +1,14 @@
+import { FieldValues, UseFormRegister } from "react-hook-form";
+
 import { Box, Paper } from "@mui/material";
 import { IMenu } from "../../../types/menuType";
 
 import InputItem from "../inputs/InputItem";
 
 interface IMenuItem {
-    cardData: any;
-    register: any;
-    j: number;
+    cardData: any,
+    register: UseFormRegister<FieldValues>,
+    j: number,
     k: number
 }
 

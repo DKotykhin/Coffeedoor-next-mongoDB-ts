@@ -18,7 +18,7 @@ interface IItemList {
     title: string;
     subtitle: string;
     showfilter: boolean;
-    filterArray: IFilter[] | null;
+    filterArray?: IFilter[];
     i: number
 }
 

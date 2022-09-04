@@ -3,18 +3,13 @@ import { useRouter } from "next/router";
 
 import ItemList from "./ItemList";
 import { teaFilter_ua, teaFilter_ru, teaFilter_en } from "./filterConstants";
-import { ICard, IFilter } from "../../types/cardType";
+import { ICardList, IFilter } from "../../types/cardType";
 
-interface ICatalog {    
-    cataloglist: {
-        coffeelist: ICard[];
-        jamlist: ICard[];
-        tealist: ICard[];
-        millslist: ICard[];
-      }
+interface ICatalog {
+    cataloglist: ICardList;
 }
 
-const Catalog: React.FC<ICatalog> = ({cataloglist}) => {
+const Catalog: React.FC<ICatalog> = ({ cataloglist }) => {
     const router = useRouter();
     let { t } = useTranslation("cataloglist");
     let teaFilter: IFilter[], i: number;
@@ -42,8 +37,7 @@ const Catalog: React.FC<ICatalog> = ({cataloglist}) => {
             <ItemList
                 props={cataloglist.coffeelist}
                 showfilter={false}
-                i={i}
-                filterArray={null}
+                i={i}                
                 id={"coffee_list"}
                 title={t("coffee_title")}
                 subtitle={t("coffee_subtitle")}
@@ -60,17 +54,15 @@ const Catalog: React.FC<ICatalog> = ({cataloglist}) => {
             <ItemList
                 props={cataloglist.jamlist}
                 showfilter={false}
-                i={i}
-                filterArray={null}
+                i={i}                
                 id={"jam_list"}
                 title={t("jam_title")}
                 subtitle={t("jam_subtitle")}
             />
             <ItemList
-                props={cataloglist.millslist}                
+                props={cataloglist.millslist}
                 showfilter={false}
-                i={i}
-                filterArray={null}
+                i={i}                
                 id={"mills_list"}
                 title={t("mills_title")}
                 subtitle={t("mills_subtitle")}

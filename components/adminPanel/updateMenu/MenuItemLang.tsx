@@ -1,10 +1,12 @@
+import { FieldValues, UseFormRegister } from "react-hook-form";
+
 import { Box, Typography } from "@mui/material";
 import { IMenu } from "../../../types/menuType";
 import MenuItem from "./MenuItem";
 
 interface IMenuItemLang {
     cardData: any, 
-    register: any, 
+    register: UseFormRegister<FieldValues>, 
     k: number
 }
 

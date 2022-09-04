@@ -1,5 +1,6 @@
 import * as React from "react";
 import useTranslation from "next-translate/useTranslation";
+import { useRouter } from "next/router";
 
 import { Box } from "@mui/system";
 import { Container, Typography } from "@mui/material";
@@ -51,13 +52,28 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 interface IAccordeon {
-    menulist: IMenu[];
-    lang: number
+    menulist: IMenu[]    
 }
 
-const Accordeon: React.FC<IAccordeon> = ({ menulist, lang }) => {
+const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
     const [expanded, setExpanded] = React.useState("");
     let { t } = useTranslation("menutitle");
+
+    const router = useRouter();
+    let lang: number;
+    switch (router.locale) {
+        case "ua":
+            lang = 0;
+            break;
+        case "ru":
+            lang = 1;
+            break;
+        case "en":
+            lang = 2;
+            break;
+        default:
+            lang = 0;
+    }
 
     const handleChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
         setExpanded(isExpanded ? panel : "");

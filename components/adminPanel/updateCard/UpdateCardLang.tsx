@@ -1,3 +1,5 @@
+import { FieldValues, UseFormRegister } from "react-hook-form";
+
 import { Box, Paper, Typography } from "@mui/material";
 import { IBody } from "../../../types/cardType";
 
@@ -8,7 +10,7 @@ import TextFieldItem from "../inputs/TextFieldItem";
 interface ICardLang {
     item: IBody;
     lang: string;
-    register: any
+    register: UseFormRegister<FieldValues>,
 }
 
 const UpdateCardLang: React.FC<ICardLang> = ({ item, lang, register }) => {
@@ -33,7 +35,7 @@ const UpdateCardLang: React.FC<ICardLang> = ({ item, lang, register }) => {
                     label={"Опис:"}
                     value={item?.description}
                     reg={register(`description_${lang}`)}
-                />               
+                />
                 <SortInputItem
                     label={"Вид:"}
                     value_1={item?.sort?.key}

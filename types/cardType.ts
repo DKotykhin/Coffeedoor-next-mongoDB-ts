@@ -1,3 +1,9 @@
+export interface ICardList {
+    coffeelist: ICard[];
+    jamlist: ICard[];
+    tealist: ICard[];
+    millslist: ICard[];
+}
 export interface ICard extends INewCardData {
     _id: string;    
 }

@@ -1,9 +1,11 @@
+import { FieldValues, UseFormRegister } from "react-hook-form";
+
 import { Box, Typography, Paper } from "@mui/material";
 
 import InputItem from "../inputs/InputItem";
 
 interface IMenuItemNew {
-    register: any,
+    register: UseFormRegister<FieldValues>,
     k: number
 }
 

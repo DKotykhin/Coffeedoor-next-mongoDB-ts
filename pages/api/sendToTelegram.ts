@@ -1,6 +1,6 @@
 import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IBasket } from "../../types/basketType";
+import { IBasket, IFormData } from "../../types/basketType";
 
 export default async function handler(
     req: NextApiRequest,
@@ -19,7 +19,7 @@ export default async function handler(
         let message = `<b>Заявка з сайту</b>\n`;
         let itemSum = 0;
 
-        const formData = req.body.formdata;
+        const formData: IFormData = req.body.formdata;
         message += `<b>Відправник: </b>${formData.name}\n`;
         message += `<b>Телефон: </b>${formData.phone}\n`;
         message += `<b>Спосіб доставки: </b>${formData.delivery}\n`;

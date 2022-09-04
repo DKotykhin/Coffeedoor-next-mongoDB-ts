@@ -38,7 +38,7 @@ const AddCard: React.FC<IAddCard> = ({ cardData, collection }) => {
         addData(newData, collection)
             .then((data) => {
                 if (data.insertedId) {
-                    router.push("/admin");
+                    router.push("/adminpanel");
                     const newItem = { _id: data.insertedId, ...newData };
                     dispatch(addCardItem(newItem));
                     toast.success("Successfully add data to database");
@@ -106,7 +106,7 @@ const AddCard: React.FC<IAddCard> = ({ cardData, collection }) => {
                 />
 
                 <Box sx={{ textAlign: "center", mb: 4 }}>
-                    <Link href="/admin">
+                    <Link href="/adminpanel">
                         <Button sx={{ mx: 2, color: "#898989" }}>
                             Відмінити
                         </Button>

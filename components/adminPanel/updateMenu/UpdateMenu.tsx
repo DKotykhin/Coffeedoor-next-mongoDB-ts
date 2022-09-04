@@ -58,7 +58,7 @@ const UpdateMenu: React.FC<IUpdateMenu> = ({ cardData, id, collection }) => {
             .then((data) => {
                 if (data.deletedCount) {
                     dispatch(deleteMenuItem(id));
-                    router.push("/admin");
+                    router.push("/adminpanel");
                     toast.success("Successfully deleted data from database");
                 } else toast.error("Can't deleted data from database");
             })
@@ -121,7 +121,7 @@ const UpdateMenu: React.FC<IUpdateMenu> = ({ cardData, id, collection }) => {
                     <Button color="error" sx={{ mx: 2 }} onClick={onDelete}>
                         Видалити
                     </Button>
-                    <Link href="/admin">
+                    <Link href="/adminpanel">
                         <Button sx={{ mx: 2, color: "#898989" }}>
                             Відмінити
                         </Button>

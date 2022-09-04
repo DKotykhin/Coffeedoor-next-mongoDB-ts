@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 interface IText {
     label: string;
-    value: string | number | undefined
+    value?: string | number
 }
 
 const CardText: React.FC<IText> = ({ label, value }) => {

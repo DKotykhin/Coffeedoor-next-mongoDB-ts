@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import { connectToDatabase } from "../lib/mongodb";
-import { ICard } from '../types/cardType';
+import { ICardList } from '../types/cardType';
 
 import NavDrawer from "../components/drawer/Drawer";
 import FirstBlock from "../components/firstBlock/FirstBlock";
@@ -12,12 +12,7 @@ import Catalog from "../components/catalog/Catalog";
 import AboutBlock from "../components/aboutblock/AboutBlock";
 import Basket from "../components/basket/Basket";
 interface HomePage {
-    cataloglist: {
-        coffeelist: ICard[];
-        jamlist: ICard[];
-        tealist: ICard[];
-        millslist: ICard[];
-    }
+    cataloglist: ICardList
 }
 
 const Home: React.FC<HomePage> = ({ cataloglist }) => {

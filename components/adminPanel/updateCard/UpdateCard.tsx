@@ -128,7 +128,7 @@ const UpdateCard: React.FC<IUpdateCard> = ({ cardData, id, collection }) => {
                     <Button color="error" sx={{ mx: 2 }} onClick={onDelete}>
                         Видалити
                     </Button>
-                    <Link href="/admin">
+                    <Link href="/adminpanel">
                         <Button sx={{ mx: 2, color: "#898989" }}>
                             Відмінити
                         </Button>

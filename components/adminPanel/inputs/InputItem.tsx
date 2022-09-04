@@ -2,7 +2,7 @@ import { Box, InputLabel, Input } from "@mui/material";
 
 interface IInput {
     label: string;
-    value: string | number | undefined;
+    value?: string | number;
     reg: Object
 }
 

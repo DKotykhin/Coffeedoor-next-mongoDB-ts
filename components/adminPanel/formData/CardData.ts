@@ -1,3 +1,5 @@
+import { INewCardData } from "../../../types/cardType";
+
 interface IFormData {
     [key: string]: string
 }
@@ -37,7 +39,7 @@ export const CardData = (data: IFormData) => {
         ...(data.additional_text_2_en && { additional_text_2: data.additional_text_2_en.split("\n") }),
     };
 
-    const newData = {
+    const newData: INewCardData = {
         body: [body_ua, body_ru, body_en],
         card_img: data.card_img,        
         list_img: data.list_img.split(",\n"),       

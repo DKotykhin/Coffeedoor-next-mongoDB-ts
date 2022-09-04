@@ -29,7 +29,7 @@ const theme = createTheme({
 });
 
 interface IBasketForm {
-    onSubmit: any
+    onSubmit: (arg0: IFormData) => void
 }
 
 const BasketForm: React.FC<IBasketForm> = ({ onSubmit }) => {

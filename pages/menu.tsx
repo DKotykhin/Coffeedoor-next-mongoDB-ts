@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { GetServerSideProps } from 'next';
 
 import { connectToDatabase } from "../lib/mongodb";
@@ -13,22 +12,7 @@ interface MenuPage {
     menulist: IMenu[]
 }
 
-const MenuPage: React.FC<MenuPage> = ({ menulist }) => {
-    const router = useRouter();
-    let lang: number;
-    switch (router.locale) {
-        case "ua":
-            lang = 0;
-            break;
-        case "ru":
-            lang = 1;
-            break;
-        case "en":
-            lang = 2;
-            break;
-        default:
-            lang = 0;
-    }
+const MenuPage: React.FC<MenuPage> = ({ menulist }) => {    
 
     return (
         <>
@@ -37,7 +21,7 @@ const MenuPage: React.FC<MenuPage> = ({ menulist }) => {
                 <title>{"Меню кав'ярні"}</title>
             </Head>
             <MenuTitle />
-            <Accordeon menulist={menulist} lang={lang} />
+            <Accordeon menulist={menulist} />
             <ReturnButton />
         </>
     );

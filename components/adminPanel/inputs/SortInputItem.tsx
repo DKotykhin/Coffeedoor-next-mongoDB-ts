@@ -2,8 +2,8 @@ import { Box, InputLabel, Input } from "@mui/material";
 
 interface ISortInput {
     label: string;
-    value_1: string | undefined;
-    value_2: string | undefined;
+    value_1?: string;
+    value_2?: string;
     reg_1: Object;
     reg_2: Object
 }
