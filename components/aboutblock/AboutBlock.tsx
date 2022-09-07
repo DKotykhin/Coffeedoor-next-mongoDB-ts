@@ -96,7 +96,7 @@ const AboutBlock: React.FC = () => {
                                 alt={item.title}
                                 width={width}
                                 height={height}
-                            // placeholder='blur'
+                                layout='responsive'
                             />
                         </ImageListItem>
                     );
